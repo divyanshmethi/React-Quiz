@@ -1,24 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Nav from './components/Nav';
+import Footer from './components/Footer';
+import Main from './components/Main';
+import Question from './components/Question';
 
 function App() {
+  const [quizStarted,setQuizStarted] = useState(false);
+  const [quizEnded,setQuizEnded] = useState(false);
+  const [countAns,setCountAns] = useState(0);
+  function updateCount()
+  {
+    setCountAns(previous => {
+      return previous + 1;
+    })
+  }
+  function handleClick(event)
+  {
+    const name = event.target.name;
+    console.log(name);
+    if(name === 'startQuiz')
+    {
+      setCountAns(0);
+      setQuizStarted(true);
+    }
+    else if(name === 'endQuiz' || name === 'nextQues')
+    {
+      setQuizEnded(true);
+      setQuizStarted(false);
+    }
+    else if(name === 'reStartQuiz')
+    {
+      setCountAns(0);
+      setQuizStarted(true);
+      setQuizEnded(false);
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav />
+      {(quizStarted) ? <Question handleClick={handleClick} setCount={updateCount}/> : <Main handleClick={handleClick} countAns={countAns} quizStarted={quizStarted} quizEnded={quizEnded}/>}
+      <Footer />
     </div>
   );
 }

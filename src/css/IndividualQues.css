@@ -1,0 +1,40 @@
+.submitAnswer
+{
+    padding: 0.6rem;
+    background-color:#28A745;
+    font-size: 1.4rem;
+    border-radius: 0.3rem;
+    border: 1px solid white;
+    color: aliceblue;
+}
+
+.submitAnswer:disabled
+{
+    background-color: #74C687;
+}
+
+.nextQues
+{
+    padding: 0.6rem;
+    background-color:#0069D9;
+    font-size: 1.4rem;
+    border-radius: 0.3rem;
+    border: 1px solid white;
+    color: aliceblue;
+    float: right;
+}
+
+.nextQues:disabled
+{
+    background-color: #5AAAFF;
+}
+
+.options
+{
+    margin: 2rem 0;
+}
+
+.input-radio
+{
+    margin-right: 0.6rem;
+}

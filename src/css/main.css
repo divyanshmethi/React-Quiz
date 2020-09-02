@@ -1,0 +1,28 @@
+.description{
+    text-align: center;
+    padding: 4rem;
+    margin-top: 5rem;
+}
+
+.title
+{
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+
+.content
+{
+    font-size: 1.5rem;
+    padding: 3rem 0;
+}
+
+.start-quiz
+{
+    padding: 1rem;
+    background-color: #418BB5;
+    font-size: 1.5rem;
+    border-radius: 0.3rem;
+    margin-top: 4rem;
+    border: 1px solid white;
+    color: aliceblue;
+}
